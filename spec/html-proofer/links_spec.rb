@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pp'
 
 describe 'Links test' do
 
@@ -484,6 +485,7 @@ describe 'Links test' do
     broken_absolute = "#{FIXTURES_DIR}/links/absolute/"
     options = { :log_level => :debug }
     proofer = run_proofer(broken_absolute, :directory, options)
+    pp proofer
     expect(proofer.failed_tests.first).to match(/internally linking to \/baz\/, which does not exist/)
   end
 end
