@@ -482,7 +482,7 @@ describe 'Links test' do
   end
 
   it 'fails for broken absolute links' do
-    broken_absolute = "#{FIXTURES_DIR}/links/absolute/"
+    broken_absolute = "#{FIXTURES_DIR}/links/absolute"
     options = { :log_level => :debug }
     ENV["NOISE"] = "Logging"
     proofer = run_proofer(broken_absolute, :directory, options)
