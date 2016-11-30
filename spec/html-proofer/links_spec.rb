@@ -482,7 +482,7 @@ describe 'Links test' do
 
   it 'fails for broken absolute links' do
     broken_absolute = "#{FIXTURES_DIR}/links/absolute/"
-    proofer = run_proofer(broken_absolute)
+    proofer = run_proofer(broken_absolute, :directory)
     expect(proofer.failed_tests.first).to match(/internally linking to \/baz\/, which does not exist/)
   end
 end
